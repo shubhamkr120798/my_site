@@ -1,0 +1,71 @@
+<html>
+
+
+<body>
+
+    {% for message in messages %}
+
+    <div class="alert alert-success">
+        <a class="close" href="#" data-dismiss="alert">×</a> {{ message }}
+
+    </div>
+    {% endfor %}
+
+    <h1 align="center"> Registeration Form </h1>
+    <form name="form" action="register/" method="POST">{% csrf_token %}
+
+        <div style="max-width:470px;">
+            <center>
+                <label> Username</label>
+                <input type="text" style="margin-left:20%;" placeholder="Username" name="name" />
+
+            </center>
+        </div>
+
+        <br>
+
+        <div style="max-width:470px;">
+            <center>
+                <label> Email </label>
+                <input type="email" style="margin-left:20%;" placeholder="email" name="email" />
+            </center>
+        </div>
+
+        <br>
+
+        <div style="max-width:470px;">
+            <center>
+                <label> Password </label>
+                <input type="password" style="margin-left:20%;" placeholder="password" name="password" />
+            </center>
+        </div>
+
+        <br>
+
+        <div style="max-width:470px;">
+            <center>
+                <label> Confirm Password </label>
+                <input type="password" style="margin-left:20%;" placeholder="Confirm password" name="re_password" />
+            </center>
+        </div>
+
+        <br> {% if ip_cnt >= 3 %}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="6Levl-QUAAAAAM8d3AQJvsSC-mm1jr855sFmO_Nh"></div>
+        {% endif %}
+        <div style="max-width:470px;">
+            <center>
+
+                <button style="border:0px; background-color:#4285F4; margin-top:8%;
+                  height:35px; width:80%;margin-left:19%;" type="submit" value="register">
+                  <strong>Register</strong>
+               </button>
+
+            </center>
+        </div>
+
+    </form>
+
+</body>
+
+</html>
